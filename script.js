@@ -21,12 +21,16 @@ buttons.forEach(button => {
     } else if (value === "π") {
       real += Math.PI;
       display.value += "π";
+    } else if (value === "^") {
+      real += "**";
+      display.value += "^";
     } else {
       real += value;
       display.value += value;
     }
   });
 });
+
 
 
 
