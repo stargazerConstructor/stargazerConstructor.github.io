@@ -1,8 +1,10 @@
-
 body {
     background: #000000;
     background-size: cover !important;
     color: #000000 !important;
+}
+* {
+  color: #FFFFFF;
 }
 
 #calc {
@@ -24,7 +26,7 @@ body {
   border-radius: 6px;
   border: none;
   background: #224400;
-  color: #ffffff;
+  color: #000000;
 }
 
 #buttons {
@@ -46,6 +48,7 @@ button {
 button:hover {
   background: #505080;
 }
+
 
 
 
