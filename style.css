@@ -16,8 +16,8 @@
   padding: 5px;
   border-radius: 6px;
   border: none;
-  background-color: 004400;
-  text-color: 000000
+  background: #004400;
+  text: #000000;
 }
 
 #buttons {
@@ -39,4 +39,5 @@ button {
 button:hover {
   background: #505080;
 }
+
 
