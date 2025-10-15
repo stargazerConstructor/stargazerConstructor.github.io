@@ -11,8 +11,13 @@ buttons.forEach(button => {
       } catch {
         display.value = "Error";
       }
+    } else if (value === "CE") {
+      display.value = "";
+    } else if (value === "π") {
+      display.value += Math.PI;
     } else {
       display.value += value;
     }
   });
 });
+
