@@ -8,7 +8,7 @@ buttons.forEach(button => {
 
     if (value === "=") {
       try {
-        real = eval(real.value);
+        real = eval(real);
         display.value = real
       } catch(err) {
         real = "Error";
@@ -27,6 +27,7 @@ buttons.forEach(button => {
     }
   });
 });
+
 
 
 
