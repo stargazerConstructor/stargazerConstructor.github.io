@@ -1,39 +1,39 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #101820;
-  color: white;
-}
-
 #calc {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
   background: #1e1e2f;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  width: 220px;
 }
 
-input {
-  width: 100%;
+#display {
+  grid-column: 1 / -1;
   height: 40px;
-  margin-bottom: 10px;
-  text-align: right;
   font-size: 1.2em;
+  text-align: right;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-auto-rows: 50px;
+  gap: 5px;
 }
 
 button {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
   font-size: 1.1em;
-  border: none;
   border-radius: 8px;
+  border: none;
+  background: #32325d;
+  color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background: #32325d;
-  color: white;
+  background: #505080;
 }
