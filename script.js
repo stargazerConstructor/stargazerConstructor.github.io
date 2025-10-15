@@ -8,8 +8,9 @@ buttons.forEach(button => {
     if (value === "=") {
       try {
         display.value = eval(display.value);
-      } catch {
+      } catch(err) {
         display.value = "Error";
+        console.log({err});
       }
     } else if (value === "CE") {
       display.value = "";
@@ -20,4 +21,5 @@ buttons.forEach(button => {
     }
   });
 });
+
 
