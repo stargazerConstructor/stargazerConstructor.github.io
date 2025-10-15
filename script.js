@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll("#buttons button");
+const real = ""
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -7,19 +8,25 @@ buttons.forEach(button => {
 
     if (value === "=") {
       try {
-        display.value = eval(display.value);
+        real = eval(real.value);
+        display.value = real
       } catch(err) {
+        real = "Error";
         display.value = "Error";
         console.log({err});
       }
     } else if (value === "CE") {
+      real = "";
       display.value = "";
     } else if (value === "π") {
-      display.value += Math.PI;
+      real += Math.PI;
+      display.value += "π";
     } else {
+      real += value;
       display.value += value;
     }
   });
 });
+
 
 
