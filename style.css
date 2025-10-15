@@ -1,5 +1,5 @@
 
-main {
+body {
     background: #000000;
     background-size: cover !important;
     color: #000000 !important;
@@ -46,6 +46,7 @@ button {
 button:hover {
   background: #505080;
 }
+
 
 
 
