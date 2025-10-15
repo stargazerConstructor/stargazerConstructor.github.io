@@ -20,16 +20,23 @@ body {
   width: 220px;
 }
 
-#display {
+#display-container {
   grid-column: 1 / -1;
+  background: #224400;
+  border-radius: 6px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#display {
+  width: 100%;
   height: 40px;
   font-size: 1.2em;
   text-align: right;
-  padding: 5px;
-  border-radius: 6px;
   border: none;
-  background: #224400;
-  color: #000000;
+  background: transparent; /* inherits from container */
+  color: #00FF00;
 }
 
 #buttons {
@@ -51,6 +58,7 @@ button {
 button:hover {
   background: #505080;
 }
+
 
 
 
