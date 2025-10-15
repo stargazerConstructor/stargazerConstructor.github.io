@@ -1,8 +1,8 @@
 
 main {
-    background: #f0f0f0;
+    background: #000000;
     background-size: cover !important;
-    color: #f0f0f0 !important;
+    color: #000000 !important;
 }
 
 #calc {
@@ -24,7 +24,7 @@ main {
   border-radius: 6px;
   border: none;
   background: #224400;
-  text: #000000;
+  color: #ffffff;
 }
 
 #buttons {
@@ -46,6 +46,7 @@ button {
 button:hover {
   background: #505080;
 }
+
 
 
 
