@@ -1,6 +1,6 @@
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll("#buttons button");
-const real = ""
+var real = ""
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -27,6 +27,7 @@ buttons.forEach(button => {
     }
   });
 });
+
 
 
 
