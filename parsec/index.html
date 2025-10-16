@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
 <head>
-  Parsecs to Uranium
+  <meta charset="UTF-8">
+  <title>Parsecs to Uranium</title>
+  <link rel="stylesheet" href="style.css">
   <script>
     const path = window.location.pathname.split('/')[1]; // first path segment
     const link = document.createElement('link');
     link.rel = 'icon';
-    
-    // dynamically set href based on current path
     link.href = '/' + path + '/favicon.ico';
-    
     document.head.appendChild(link);
   </script>
+  <style>
+    /* Make the slider thicker */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 300px;
+      height: 12px; /* thicker */
+      background: #ddd;
+      border-radius: 6px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      background: #00ff00;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #000;
+      margin-top: -6px; /* center the thumb */
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      background: #00ff00;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #000;
+    }
+
+    /* Output display style */
+    #output {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 <h1>Parsec → Uranium</h1>
 <p><b>WARNING:</b> The amount of uranium does not equal the total cost of traveling to the system! (That includes the interplanetary travel cost.)
   Remember to <b>bring extra uranium just in case the calculation isn't enough.</b>
 </p>
+
 <div>
   <input type="range" id="dist" name="distance" min="0" max="180" />
   <label for="dist">Parsecs</label>
 </div>
+
 <div>
   <input type="checkbox" id="twoway" name="twoway" checked />
   <label for="twoway">Two-Way?</label>
 </div>
+
+<!-- Output display -->
+<div>
+  Uranium needed: <span id="output">0</span>
+</div>
+
+<script>
+  const distSlider = document.getElementById('dist');
+  const output = document.getElementById('output');
+  const twoWay = document.getElementById('twoway');
+
+  function updateUranium() {
+    let parsecs = parseInt(distSlider.value);
+    let uranium = parsecs * 10; // example conversion
+    if (twoWay.checked) uranium *= 2;
+    output.textContent = uranium;
+  }
+
+  distSlider.addEventListener('input', updateUranium);
+  twoWay.addEventListener('change', updateUranium);
+
+  // initialize display
+  updateUranium();
+</script>
 </body>
 </html>
