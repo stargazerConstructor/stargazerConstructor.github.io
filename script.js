@@ -61,13 +61,13 @@ buttons.forEach(button => {
       real += "**";
       display.value += "^";
     } else if (value === "sin") {
-      real += "sin(";
+      real += "Math.sin(";
       display.value += "sin(";
     } else if (value === "cos") {
-      real += "cos(";
+      real += "Math.cos(";
       display.value += "cos(";
     } else if (value === "tan") {
-      real += "tan(";
+      real += "Math.tan(";
       display.value += "tan(";
     } else if (value === "round") {
       try {
@@ -88,6 +88,7 @@ buttons.forEach(button => {
     }
   });
 });
+
 
 
 
