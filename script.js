@@ -70,6 +70,7 @@ buttons.forEach(button => {
       display.value += "tan(";
     } else if (value === "round") {
       try {
+        real += ""
         // Replace all √ symbols with Math.sqrt()
         const expr = real.replace(/√/g, "Math.sqrt");
         real = Math.round(eval(expr));
@@ -86,6 +87,7 @@ buttons.forEach(button => {
     }
   });
 });
+
 
 
 
