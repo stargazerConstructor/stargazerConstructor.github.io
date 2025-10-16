@@ -94,27 +94,36 @@
   </header>
 
   <div id="sidebar">
-    <div>
-      <label for="layers">Hopper Layers</label>
-      <input type="range" id="layers" name="layers" min="0" max="15">
-    </div>
-    <div>
-      <label for="heat">Heat</label>
-      <input type="range" id="heat" name="heat" min="0" max="96">
-      <label for="heat">Electric Heaters</label>
-      <input type="range" id="heaters" name="heaters" min="0" max="12">
-    </div>
+  <div>
+    <label for="layers">Hopper Layers</label>
+    <input type="range" id="layers" name="layers" min="0" max="15">
   </div>
+  <div>
+    <label for="heat">Heat</label>
+    <input type="range" id="heat" name="heat" min="0" max="96">
+  </div>
+  <div>
+    <label for="heaters">Electric Heaters</label>
+    <input type="range" id="heaters" name="heaters" min="0" max="12">
+  </div>
+</div>
 
   <main>
     <div id="output">
       Hopper Layers: <span id="layerInput">T.B.A</span>
+      
       Refining Speed: <span id="refSpeed">T.B.A</span>
+      
       Heat Inputted: <span id="inHeat">T.B.A</span>
+      
       Electric Heaters: <span id="heaterLabel">T.B.A</span>
+      
       Heat Required: <span id="reqHeat">T.B.A</span>
+      
       Kilojoules Used: <span id="kJ">T.B.A</span>
+      
       Materials Required: <ul>
+        
         <li>Steel - <span id="steel">?</span></li>
         <li>Copper - <span id="copper">?</span></li>
         <li>Iridium - <span id="iridium">?</span></li>
@@ -124,40 +133,44 @@
     </div>
   </main>
   <script>
-  const layerSlider = document.getElementById('layers');
-  const heatSlider = document.getElementById('heat');
-  const heaterSlider = document.getElementById('heaters');
-  const heatLabel = document.getElementById('inHeat');
-  const heatReqLabel = document.getElementById('reqHeat');
-  const kJReq = document.getElementById('kJ');
-  const layerLabel = document.getElementById('layerInput');
-      const steel = document.getElementById('steel');
-      const copper = document.getElementById('copper');
-      const iridium = document.getElementById('iridium');
-      const wood = document.getElementById('wood');
-      const aluminum = document.getElementById('aluminum');
-  
-  function updateStats() {
-    // Update displays
-    let heatUnits = (heatSlider.value*(heaterSlider.value*8))
-    layerLabel.textContent = layerSlider.value;
-    heatLabel.textContent = heatUnits + " Heat Units";
-    heaterLabel.textContent = heaterSlider.value;
-    heatReqLabel.textContent = 8 - heatUnits
-    kJReq.textContent = heaterSlider.value / 10
-                              /*Base       Steel Casings      Steel Trusses            Hoppers                Electric Heaters*/
-    wood.textContent =                                                                 (layerSlider.value*4)
-    steel.textContent =       36 +         (9*8) +            (layerSlider.value*4)  + (layerSlider.value*8)+ (heaterSlider.value*7)
-    aluminum.textContent =                 (9*1)
-    copper.textContent =      16 +                                                                            (heaterSlider.value*7)
-    iridium.textContent =     24 +                                                                            (heaterSlider.value*14)
-  }
-
-  distSlider.addEventListener('input', updateStats);
-  twoWay.addEventListener('change', updateStats);
-
-  // Initialize display
-  updateStats();
+    const layerSlider = document.getElementById('layers');
+    const heatSlider = document.getElementById('heat');
+    const heaterSlider = document.getElementById('heaters');
+    
+    const heatLabel = document.getElementById('inHeat');
+    const heatReqLabel = document.getElementById('reqHeat');
+    const kJReq = document.getElementById('kJ');
+    const layerLabel = document.getElementById('layerInput');
+    const heaterLabel = document.getElementById('heaterLabel');
+    
+    const steel = document.getElementById('steel');
+    const copper = document.getElementById('copper');
+    const iridium = document.getElementById('iridium');
+    const wood = document.getElementById('wood');
+    const aluminum = document.getElementById('aluminum');
+    
+    function updateStats() {
+      let heatUnits = heatSlider.value * (heaterSlider.value * 8);
+      layerLabel.textContent = layerSlider.value;
+      heatLabel.textContent = heatUnits + " Heat Units";
+      heaterLabel.textContent = heaterSlider.value;
+      heatReqLabel.textContent = Math.max(0, 8 - heatUnits);
+      kJReq.textContent = (heaterSlider.value / 10).toFixed(1);
+    
+      wood.textContent = layerSlider.value * 4;
+      steel.textContent = 36 + (9*8) + (layerSlider.value*4) + (layerSlider.value*8) + (heaterSlider.value*7);
+      aluminum.textContent = 9 * 1;
+      copper.textContent = 16 + (heaterSlider.value * 7);
+      iridium.textContent = 24 + (heaterSlider.value * 14);
+    }
+    
+    // Add proper event listeners
+    layerSlider.addEventListener('input', updateStats);
+    heatSlider.addEventListener('input', updateStats);
+    heaterSlider.addEventListener('input', updateStats);
+    
+    // Initialize display
+    updateStats();
 </script>
 </body>
 </html>
