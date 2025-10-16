@@ -55,6 +55,10 @@
   <label for="twoway">Two-Way?</label>
 </div>
 
+<!-- Input display -->
+<div>
+  Distance: <span id="input">0</span> parsecs
+</div>
 <!-- Output display -->
 <div>
   Uranium needed: <span id="output">0</span>
@@ -62,6 +66,7 @@
 
 <script>
   const distSlider = document.getElementById('dist');
+  const input = document.getElementById('input');
   const output = document.getElementById('output');
   const twoWay = document.getElementById('twoway');
 
@@ -70,6 +75,7 @@
     let uranium = parsecs * 1; // example conversion
     uranium = math.Min(uranium,50)
     if (twoWay.checked) uranium *= 2;
+    input.textContent = parsecs;
     output.textContent = uranium;
   }
 
