@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
   Parsecs to Uranium
+  <script>
+    const path = window.location.pathname.split('/')[1]; // first path segment
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    
+    // dynamically set href based on current path
+    link.href = '/' + path + '/favicon.ico';
+    
+    document.head.appendChild(link);
+  </script>
 </head>
 <body>
 <h1>Parsec → Uranium</h1>
