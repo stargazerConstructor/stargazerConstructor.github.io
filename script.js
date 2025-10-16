@@ -72,7 +72,7 @@ buttons.forEach(button => {
       try {
         // Replace all √ symbols with Math.sqrt()
         const expr = real.replace(/√/g, "Math.sqrt");
-        real = math.round(eval(expr));
+        real = Math.round(eval(expr));
         const formatted = formatNumber(real);
         display.value = formatted;
       } catch (err) {
@@ -86,5 +86,6 @@ buttons.forEach(button => {
     }
   });
 });
+
 
 
