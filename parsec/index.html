@@ -72,7 +72,7 @@
 
   function updateUranium() {
     let parsecs = parseInt(distSlider.value);
-    uranium = Math.min(Math.round(parsecs-3),50)
+    uranium = Math.min(Math.max(0,Math.round(parsecs-3)),50)
     if (twoWay.checked) uranium *= 2;
     input.textContent = parsecs;
     output.textContent = uranium;
