@@ -59,9 +59,22 @@ buttons.forEach(button => {
     } else if (value === "^") {
       real += "**";
       display.value += "^";
+    } else if (value === "sin") {
+      real += "sin(";
+      display.value += "sin(";
+    } else if (value === "cos") {
+      real += "cos(";
+      display.value += "cos(";
+    } else if (value === "tan") {
+      real += "tan(";
+      display.value += "tan(";
+    } else if (value === "round") {
+      real += "Math.round(";
+      display.value += "round(";
     } else {
       real += value;
       display.value += value;
     }
   });
 });
+
