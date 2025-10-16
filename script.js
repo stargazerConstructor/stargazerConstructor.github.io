@@ -69,12 +69,22 @@ buttons.forEach(button => {
       real += "tan(";
       display.value += "tan(";
     } else if (value === "round") {
-      real += "Math.round(";
-      display.value += "round(";
+      try {
+        // Replace all √ symbols with Math.sqrt()
+        const expr = real.replace(/√/g, "Math.sqrt");
+        real = math.round(eval(expr));
+        const formatted = formatNumber(real);
+        display.value = formatted;
+      } catch (err) {
+        real = "Error";
+        display.value = "Error";
+        console.log({ err });
+      }
     } else {
       real += value;
       display.value += value;
     }
   });
 });
+
 
