@@ -144,7 +144,7 @@
     const aluminum = document.getElementById('aluminum');
     
     function updateStats() {
-      let heatUnits = heatSlider.value + (heaterSlider.value * 8);
+      let heatUnits = eval(heatSlider.value + "+" + (heaterSlider.value * 8));
       layerLabel.textContent = layerSlider.value;
       heatLabel.textContent = heatUnits + " Heat Units";
       heaterLabel.textContent = heaterSlider.value;
