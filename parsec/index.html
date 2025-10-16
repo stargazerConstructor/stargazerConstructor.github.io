@@ -67,7 +67,8 @@
 
   function updateUranium() {
     let parsecs = parseInt(distSlider.value);
-    let uranium = parsecs * 10; // example conversion
+    let uranium = parsecs * 1; // example conversion
+    uranium = math.Min(uranium,50)
     if (twoWay.checked) uranium *= 2;
     output.textContent = uranium;
   }
