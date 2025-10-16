@@ -1,0 +1,70 @@
+@import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+
+body {
+    background: #000000;
+    background-size: cover !important;
+    color: #000000 !important;
+}
+* {
+  font-family: 'VCR OSD Mono', monospace !important;
+  color: #00FF00
+}
+
+#calc {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+}
+
+#display-container {
+  grid-column: 1 / -1;
+  background: #224400;
+  border-radius: 6px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  font-size: 1.2em;
+  text-align: right;
+  border: none;
+  background: transparent; /* inherits from container */
+  color: #00FF00;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-auto-rows: 50px;
+  gap: 5px;
+}
+
+button {
+  font-size: 1.1em;
+  border-radius: 8px;
+  border: none;
+  background: #32325d;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #505080;
+}
+
+
+
+
+
+
+
+
+
+
