@@ -6,10 +6,12 @@ body {
     color: #000000 !important;
 }
 * {
-  font-family: 'VCR OSD Mono', monospace !important;
-  color: #00FF00
+    font-family: 'VCR OSD Mono', monospace !important;
+    color: #00FF00
 }
-
+a {
+    color: #0ff;
+}
 #calc {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -39,6 +41,7 @@ button {
 button:hover {
   background: #505080;
 }
+
 
 
 
